@@ -10,18 +10,18 @@ import redirectRouter from "./routes/redirect.route.js";
 
 const app = express();
 
-const whiteList = [process.env.ORIGIN1, process.env.ORIGIN2];
+const whiteList = [process.env.ORIGIN2, process.env.ORIGIN2];
 
-// app.use(
-//   cors({
-//     origin: function (origin, callback) {
-//       if (!origin || whiteList.includes(origin)) {
-//         return callback(null, origin);
-//       }
-//       return callback("Cors error origin: " + origin + " not aurotized!");
-//     },
-//   })
-// );
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin || whiteList.includes(origin)) {
+        return callback(null, origin);
+      }
+      return callback("Cors error origin: " + origin + " not aurotized!");
+    },
+  })
+);
 
 app.use(express.json());
 app.use(cookieParser());
