@@ -1,12 +1,12 @@
 {
-  "name": "bluuweb-api-rest",
+  "name": "api-rest",
   "type": "module",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index",
-    "start": "node index"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
